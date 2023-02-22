@@ -24,8 +24,8 @@
             <!-- **************************
         BARRA SUPERIORE
         ************************** -->
-            <div class="row ">
-                <div class="col-4 scb-debug scb-top-template d-flex justify-content-between align-items-center">
+            <div class="row">
+                <div class="col-4 scb-debug scb-top-template d-flex justify-content-between align-items-center cianuro">
                     <!-- USER SPACE: AVATAR -->
                     <div>
                         <img class="avatar-cianuro scb-debug" src="./img/cianuro.png" alt="">
@@ -83,7 +83,28 @@
                         </div>
                     </div>
                     <!-- LISTA CONTATTI -->
-                    <div class="elenco-contatti scb-debug  ">
+                    <div class="elenco-contatti scb-debug d-flex overflow-y-scroll ">
+
+                        <!-- CONTENITORE CONTATTO  -->
+                        <div class=" scb-contatti d-flex scb-debug  ">
+                            <!-- NOME E ULTIMO ACCESSO CONTATTO  -->
+                            <div class="d-flex">
+                                <img class="avatar-contatti scb-debug" src="./img/donna1.png" alt="">
+                                <div class="scb-debug scb-scheda-nome-contatto">
+                                    <span class="d-block ps-2" class="ps-2 scb-nome-contatto"
+                                        style="font-weight: bold;">Michele</span>
+                                    <span class="ps-2">Ultimo messaggio inviato</span>
+                                </div>
+                            </div>
+                            <!-- ORA RICEZIONE MESSAGGIO -->
+                            <div>
+                                <span class="scb-debug">12:00</span>
+
+                            </div>
+
+
+                        </div>
+
 
                     </div>
 
@@ -92,9 +113,21 @@
                 RIGHT  OR CHAT SIDE
                 ************************** -->
                 <div class="col-8 scb-debug d-flex flex-column p-0">
-                    <!-- CHAT -->
-                    <div class="scb-chat scb-debug">
 
+                    <!-- CHAT -->
+                    <div class="scb-chat scb-debug overflow-y-scroll">
+                        <div class="messaggio-inviato">
+                            <p class="">Hai portato a spasso il cane?</p>
+                            <p class="orario-messaggio">15.30</p>
+                        </div>
+                        <div class="messaggio-inviato">
+                            <p class="">Ricordati di stendere i panni</p>
+                            <p class="orario-messaggio">15.50</p>
+                        </div>
+                        <div class="messaggio-ricevuto">
+                            <p class="">Tutto fatto!</p>
+                            <p class="orario-messaggio">16.15</p>
+                        </div>
                     </div>
                     <!-- SCRIVI MESSAGGIO -->
                     <div class="scb-scrivi-messaggio scb-debug d-flex justify-content-between align-items-center">
