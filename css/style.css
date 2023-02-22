@@ -1,0 +1,49 @@
+/* **************************
+RESET
+************************** */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* **************************
+DEBUG
+************************** */
+.scb-debug {
+  border: 2px solid black;
+}
+/* **************************
+TEMPLATE
+************************** */
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 150, 135, 1) 15%,
+    rgb(192, 194, 181) 15%
+  );
+  overflow: hidden;
+}
+
+.scb-container {
+  margin: 40px auto;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.scb-top-template {
+  background-color: #c5bfbf;
+}
+.avatar {
+  width: 40px;
+  margin: 10px 0;
+}
