@@ -30,20 +30,103 @@ body {
     rgb(192, 194, 181) 15%
   );
   overflow: hidden;
+  font-size: 15px;
 }
 
 .scb-container {
-  margin: 40px auto;
+  margin: 20px auto;
   height: calc(100vh - 80px);
   overflow: hidden;
-  padding-top: 5px;
+  /* padding-top: 5px; */
   padding-bottom: 5px;
+  /* padding-left: 0; */
+  /* padding-right: 0; */
+}
+
+.scb-body-container {
+  padding: 0;
 }
 
 .scb-top-template {
   background-color: #c5bfbf;
+  height: 70px;
 }
-.avatar {
-  width: 40px;
+
+.scb-body-template {
+  height: calc(100% - 70px);
+}
+
+.avatar-cianuro {
+  width: 50px;
   margin: 10px 0;
 }
+.avatar {
+  width: 60px;
+  margin: 10px 0;
+}
+.scb-icon {
+  color: #878383;
+  font-size: 1.3rem;
+}
+
+.scb-icon-central {
+  margin: 0 1rem;
+}
+
+.scb-notifiche {
+  height: 80px;
+  background-color: #8edafc;
+  padding: 10px;
+}
+
+.scb-attiva-notifiche {
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.scb-campana-notifiche {
+  font-size: 30px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  color: #8edafc;
+}
+
+.elenco-contatti {
+  height: 100%;
+  background-color: #ebeef0;
+  overflow: auto;
+  padding: 10px;
+}
+
+.scb-chat {
+  height: 100%;
+  background-image: url(.././img/sfondo-chat.jpg);
+  padding: 10px;
+}
+
+.scb-scrivi-messaggio {
+  height: 70px;
+  background-color: #f2eeea;
+  padding: 10px;
+}
+
+.scb-barra-di-ricerca {
+  padding: 0 10px;
+  background-color: #f8f9fa;
+}
+.scb-campo-scrivi {
+  width: 90%;
+}
+
+.scb-icone-scrivi-messaggio {
+  font-size: 1.5rem;
+}
+/* **************************
+CONTATTI
+************************** */
+
+/* **************************
+CHAT
+************************** */
