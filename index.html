@@ -44,8 +44,8 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <img class="avatar scb-debug" src="./img/donna1.png" alt="">
                         <div class="scb-debug">
-                            <span class="ps-2 d-block" class="ps-2 fw-medium">Michele</span>
-                            <span class="ps-2">Ultimo accesso oggi alle 12</span>
+                            <span class="ps-2 d-block nome-contatto-ospite" class="ps-2 fw-medium">Michele</span>
+                            <span class="ps-2 ultimo-accesso">Ultimo accesso oggi alle 12</span>
                         </div>
                     </div>
                     <!-- CHAT SPACE: ICON -->
@@ -76,14 +76,15 @@
                     <!-- BARRA DI RICERCA -->
                     <div class="scb-barra-di-ricerca scb-debug">
                         <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1"><i
-                                    class="fa-solid fa-magnifying-glass scb-icon scb-debug"></i></span>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                                aria-label="text" aria-describedby="basic-addon1">
+                            <span class="input-group-text input-cerca" id="basic-addon1"><i
+                                    class="fa-solid fa-magnifying-glass scb-icon scb-debug lente-ricerca"></i></span>
+                            <input type="text" class="form-control input-cerca"
+                                placeholder="Cerca o inizia una nuova chat" aria-label="text"
+                                aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <!-- LISTA CONTATTI -->
-                    <div class="elenco-contatti scb-debug overflow-y-scroll " v-for="contatto in contacts">
+                    <div class="elenco-contatti scb-debug " v-for="contatto in contacts">
 
                         <!-- CONTENITORE CONTATTO  -->
                         <div class="scb-contatti d-flex scb-debug">
@@ -93,7 +94,7 @@
                                 <div class="scb-debug scb-scheda-nome-contatto">
                                     <span class="d-block ps-2" class="ps-2 scb-nome-contatto"
                                         style="font-weight: bold;">{{contatto.name}}</span>
-                                    <span class="ps-2">Ultimo messaggio inviato</span>
+                                    <span class="ps-2 ultimo-messagio-inviato">Ultimo messaggio inviato</span>
                                 </div>
                             </div>
                             <!-- ORA RICEZIONE MESSAGGIO -->
@@ -115,16 +116,16 @@
                 <div class="col-8 scb-debug d-flex flex-column p-0">
 
                     <!-- CHAT -->
-                    <div class="scb-chat scb-debug overflow-y-scroll">
-                        <div class="messaggio-inviato">
+                    <div class="scb-chat scb-debug overflow-y-scroll d-flex flex-column">
+                        <div class="messaggio-inviato align-self-end me-5">
                             <p class="">Hai portato a spasso il cane?</p>
                             <p class="orario-messaggio">15.30</p>
                         </div>
-                        <div class="messaggio-inviato">
-                            <p class="">Ricordati di stendere i panni</p>
+                        <div class="messaggio-inviato align-self-end me-5">
+                            <p class="">Ricordati di stendere i panni.</p>
                             <p class="orario-messaggio">15.50</p>
                         </div>
-                        <div class="messaggio-ricevuto">
+                        <div class="messaggio-ricevuto align-self-start ms-5">
                             <p class="">Tutto fatto!</p>
                             <p class="orario-messaggio">16.15</p>
                         </div>
