@@ -207,6 +207,15 @@ createApp({
       const sentMessage = this.contacts[currentChat].messages;
       sentMessage.push(contenutoNuovoMessaggio);
       this.inviaMessaggio = "";
+
+      setTimeout(() => {
+        const autoReplayMessage = {
+          date: "10/01/2020 15:51:00",
+          message: "OK!!",
+          status: "received",
+        };
+        sentMessage.push(autoReplayMessage);
+      }, 10000);
     },
     //-----------------------------------------------------------------------
     //   END METHODS
