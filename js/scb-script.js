@@ -178,6 +178,7 @@ createApp({
     return {
       message: "CIAO CIANURO!",
       contacts: contacts,
+      currentChat: 0,
       //  END DATA RETURN
     };
     //------------------------------------------------------------------------
@@ -186,6 +187,9 @@ createApp({
   //--------------------------------------------------------------------------
   //  START METHODS
   methods: {
+    selezionaContattoAttivo(currentIndex) {
+      this.currentChat = currentIndex;
+    },
     //-----------------------------------------------------------------------
     //   END METHODS
   },

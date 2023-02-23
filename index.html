@@ -25,9 +25,10 @@
         BARRA SUPERIORE
         ************************** -->
             <div class="row">
-                <div class="col-4 scb-debug scb-top-template d-flex justify-content-between align-items-center cianuro">
+                <div
+                    class="col-4 scb-debug scb-top-template d-flex justify-content-between align-items-center cianuro scb-aside">
                     <!-- USER SPACE: AVATAR -->
-                    <div>
+                    <div class="">
                         <img class="avatar-cianuro scb-debug" src="./img/cianuro.png" alt="">
                         <span class="ps-2 scb-debug fw-medium">Cianuro</span>
                     </div>
@@ -42,9 +43,10 @@
                 <div class="col-8 scb-debug scb-top-template d-flex justify-content-between align-items-center">
                     <!-- CHAT SPACE: AVATAR  -->
                     <div class="d-flex justify-content-between align-items-center">
-                        <img class="avatar scb-debug" src="./img/donna1.png" alt="">
+                        <img class="avatar scb-debug" :src="contacts[currentChat].avatar" alt="">
                         <div class="scb-debug">
-                            <span class="ps-2 d-block nome-contatto-ospite" class="ps-2 fw-medium">Michele</span>
+                            <span class="ps-2 d-block nome-contatto-ospite"
+                                class="ps-2 fw-medium">{{contacts[currentChat].name}}</span>
                             <span class="ps-2 ultimo-accesso">Ultimo accesso oggi alle 12</span>
                         </div>
                     </div>
@@ -84,30 +86,34 @@
                         </div>
                     </div>
                     <!-- LISTA CONTATTI -->
-                    <div class="elenco-contatti scb-debug " v-for="contatto in contacts">
+                    <div class="scb-lista">
+                        <div class="elenco-contatti scb-debug " v-for="(contatto,i) in contacts"
+                            @click="selezionaContattoAttivo(i)" :class="this.currentChat===i? `active` : ``">
 
-                        <!-- CONTENITORE CONTATTO  -->
-                        <div class="scb-contatti d-flex scb-debug">
-                            <!-- NOME E ULTIMO ACCESSO CONTATTO  -->
-                            <div class="d-flex">
-                                <img class="avatar-contatti scb-debug" :src="contatto.avatar" alt="">
-                                <div class="scb-debug scb-scheda-nome-contatto">
-                                    <span class="d-block ps-2" class="ps-2 scb-nome-contatto"
-                                        style="font-weight: bold;">{{contatto.name}}</span>
-                                    <span class="ps-2 ultimo-messagio-inviato">Ultimo messaggio inviato</span>
+                            <!-- CONTENITORE CONTATTO  -->
+                            <div class="scb-contatti d-flex scb-debug">
+                                <!-- NOME E ULTIMO ACCESSO CONTATTO  -->
+                                <div class="d-flex">
+                                    <img class="avatar-contatti scb-debug" :src="contatto.avatar" alt="">
+                                    <div class="scb-debug scb-scheda-nome-contatto">
+                                        <span class="d-block ps-2" class="ps-2 scb-nome-contatto"
+                                            style="font-weight: bold;">{{contatto.name}}</span>
+                                        <span class="ps-2 ultimo-messagio-inviato">Ultimo messaggio inviato</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- ORA RICEZIONE MESSAGGIO -->
-                            <div class="scb-ora-ricezione">
-                                <span class="scb-debug">12:00</span>
+                                <!-- ORA RICEZIONE MESSAGGIO -->
+                                <div class="scb-ora-ricezione">
+                                    <span class="scb-debug">12:00</span>
+
+                                </div>
+
 
                             </div>
 
 
                         </div>
-
-
                     </div>
+
 
                 </div>
                 <!-- **************************
@@ -117,18 +123,19 @@
 
                     <!-- CHAT -->
                     <div class="scb-chat scb-debug overflow-y-scroll d-flex flex-column">
-                        <div class="messaggio-inviato align-self-end me-5">
-                            <p class="">Hai portato a spasso il cane?</p>
+                        <div class=" ms-5 me-5" v-for="messaggi in contacts[currentChat].messages"
+                            :class="messaggi.status=== `sent` ? `messaggio-inviato` :`messaggio-ricevuto`">
+                            <p>{{messaggi.message}}</p>
                             <p class="orario-messaggio">15.30</p>
                         </div>
-                        <div class="messaggio-inviato align-self-end me-5">
+                        <!-- <div class="messaggio-inviato align-self-end me-5">
                             <p class="">Ricordati di stendere i panni.</p>
                             <p class="orario-messaggio">15.50</p>
                         </div>
                         <div class="messaggio-ricevuto align-self-start ms-5">
                             <p class="">Tutto fatto!</p>
                             <p class="orario-messaggio">16.15</p>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- SCRIVI MESSAGGIO -->
                     <div class="scb-scrivi-messaggio scb-debug d-flex justify-content-between align-items-center">
