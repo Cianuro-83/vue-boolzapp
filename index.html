@@ -130,7 +130,8 @@
                         </div>
                         <div class="scb-campo-scrivi scb-debug">
                             <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="text"
-                                aria-describedby="basic-addon1" v-model="inviaMessaggio">
+                                aria-describedby="basic-addon1" v-model="inviaMessaggio"
+                                @keydown.enter="nuovoMessaggio([currentChat])">
                         </div>
                         <div class="scb-debug">
                             <i class="fa-solid fa-microphone scb-icone-scrivi-messaggio"></i>

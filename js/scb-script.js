@@ -192,6 +192,22 @@ createApp({
     selezionaContattoAttivo(currentIndex) {
       this.currentChat = currentIndex;
     },
+    nuovoMessaggio(currentChat) {
+      const nuovoMessaggio = this.inviaMessaggio.trim();
+      if (nuovoMessaggio === "") {
+        this.inviaMessaggio = "";
+        return;
+      }
+      const contenutoNuovoMessaggio = {
+        date: "10/01/2020 15:50:00",
+        message: "",
+        status: "sent",
+      };
+      contenutoNuovoMessaggio.message = nuovoMessaggio;
+      const sentMessage = this.contacts[currentChat].messages;
+      sentMessage.push(contenutoNuovoMessaggio);
+      this.inviaMessaggio = "";
+    },
     //-----------------------------------------------------------------------
     //   END METHODS
   },
