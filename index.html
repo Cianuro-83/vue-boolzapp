@@ -83,16 +83,16 @@
                         </div>
                     </div>
                     <!-- LISTA CONTATTI -->
-                    <div class="elenco-contatti scb-debug d-flex overflow-y-scroll ">
+                    <div class="elenco-contatti scb-debug overflow-y-scroll " v-for="contatto in contacts">
 
                         <!-- CONTENITORE CONTATTO  -->
-                        <div class=" scb-contatti d-flex scb-debug  ">
+                        <div class="scb-contatti d-flex scb-debug">
                             <!-- NOME E ULTIMO ACCESSO CONTATTO  -->
                             <div class="d-flex">
-                                <img class="avatar-contatti scb-debug" src="./img/donna1.png" alt="">
+                                <img class="avatar-contatti scb-debug" :src="contatto.avatar" alt="">
                                 <div class="scb-debug scb-scheda-nome-contatto">
                                     <span class="d-block ps-2" class="ps-2 scb-nome-contatto"
-                                        style="font-weight: bold;">Michele</span>
+                                        style="font-weight: bold;">{{contatto.name}}</span>
                                     <span class="ps-2">Ultimo messaggio inviato</span>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
 
                         </div>
 
-                        <img src="./img/1-michele.png" alt="">
+
                     </div>
 
                 </div>
