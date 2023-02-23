@@ -179,6 +179,8 @@ createApp({
       message: "CIAO CIANURO!",
       contacts: contacts,
       currentChat: 0,
+      cerca: "",
+      inviaMessaggio: "",
       //  END DATA RETURN
     };
     //------------------------------------------------------------------------

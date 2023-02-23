@@ -82,7 +82,7 @@
                                     class="fa-solid fa-magnifying-glass scb-icon scb-debug lente-ricerca"></i></span>
                             <input type="text" class="form-control input-cerca"
                                 placeholder="Cerca o inizia una nuova chat" aria-label="text"
-                                aria-describedby="basic-addon1">
+                                aria-describedby="basic-addon1" v-model="cerca">
                         </div>
                     </div>
                     <!-- LISTA CONTATTI -->
@@ -104,17 +104,10 @@
                                 <!-- ORA RICEZIONE MESSAGGIO -->
                                 <div class="scb-ora-ricezione">
                                     <span class="scb-debug">12:00</span>
-
                                 </div>
-
-
                             </div>
-
-
                         </div>
                     </div>
-
-
                 </div>
                 <!-- **************************
                 RIGHT  OR CHAT SIDE
@@ -128,14 +121,7 @@
                             <p>{{messaggi.message}}</p>
                             <p class="orario-messaggio">15.30</p>
                         </div>
-                        <!-- <div class="messaggio-inviato align-self-end me-5">
-                            <p class="">Ricordati di stendere i panni.</p>
-                            <p class="orario-messaggio">15.50</p>
-                        </div>
-                        <div class="messaggio-ricevuto align-self-start ms-5">
-                            <p class="">Tutto fatto!</p>
-                            <p class="orario-messaggio">16.15</p>
-                        </div> -->
+
                     </div>
                     <!-- SCRIVI MESSAGGIO -->
                     <div class="scb-scrivi-messaggio scb-debug d-flex justify-content-between align-items-center">
@@ -144,7 +130,7 @@
                         </div>
                         <div class="scb-campo-scrivi scb-debug">
                             <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="text"
-                                aria-describedby="basic-addon1">
+                                aria-describedby="basic-addon1" v-model="inviaMessaggio">
                         </div>
                         <div class="scb-debug">
                             <i class="fa-solid fa-microphone scb-icone-scrivi-messaggio"></i>

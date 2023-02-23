@@ -107,13 +107,13 @@ body {
 }
 
 .scb-chat {
-  /* height: 100%; */
   flex-grow: 1;
   background-image: url(.././img/aurora-boreale-2023.jpg);
   object-fit: cover;
   object-position: center;
   background-repeat: no-repeat;
   padding: 10px;
+  padding-top: 25px;
 }
 
 .scb-scrivi-messaggio {
