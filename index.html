@@ -82,22 +82,29 @@
                                     class="fa-solid fa-magnifying-glass scb-icon scb-debug lente-ricerca"></i></span>
                             <input type="text" class="form-control input-cerca"
                                 placeholder="Cerca o inizia una nuova chat" aria-label="text"
-                                aria-describedby="basic-addon1" v-model="cerca">
+                                aria-describedby="basic-addon1" v-model="cerca" @keyup="inputCercaContatto()"
+                                @keydown.enter=" resetCerca()">
+                            <i class="fa-regular fa-circle-xmark" @click=" resetCerca()"></i>
                         </div>
                     </div>
                     <!-- LISTA CONTATTI -->
-                    <div class="scb-lista">
+                    <div class="scb-lista overflow-y-scroll">
                         <div class="elenco-contatti scb-debug " v-for="(contatto,i) in contacts"
-                            @click="selezionaContattoAttivo(i)" :class="this.currentChat===i? `active` : ``">
+                            @click="selezionaContattoAttivo(i)" :class="this.currentChat===i? `active` : ``"
+                            v-if="cerca=== `` ? `contatto` : cercaEfiltra(this.contacts)">
 
                             <!-- CONTENITORE CONTATTO  -->
                             <div class="scb-contatti d-flex scb-debug">
                                 <!-- NOME E ULTIMO ACCESSO CONTATTO  -->
                                 <div class="d-flex">
-                                    <img class="avatar-contatti scb-debug" :src="contatto.avatar" alt="">
+                                    <img class="avatar-contatti scb-debug" :src="cerca===`` ? contatto.avatar : ``"
+                                        alt="">
                                     <div class="scb-debug scb-scheda-nome-contatto">
                                         <span class="d-block ps-2" class="ps-2 scb-nome-contatto"
-                                            style="font-weight: bold;">{{contatto.name}}</span>
+                                            style="font-weight: bold;"> {{cerca==="" ? contatto.name :
+                                            cercaEfiltra(contatto.name)}}
+                                            <!-- {{contatto.name}} -->
+                                        </span>
                                         <span class="ps-2 ultimo-messagio-inviato">Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
@@ -115,6 +122,7 @@
                 <div class="col-8 scb-debug d-flex flex-column p-0">
 
                     <!-- CHAT -->
+
                     <div class="scb-chat scb-debug overflow-y-scroll d-flex flex-column">
                         <div class=" ms-5 me-5" v-for="messaggi in contacts[currentChat].messages"
                             :class="messaggi.status=== `sent` ? `messaggio-inviato` :`messaggio-ricevuto`">

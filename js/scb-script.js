@@ -181,6 +181,7 @@ createApp({
       currentChat: 0,
       cerca: "",
       inviaMessaggio: "",
+      nomi: contacts.name,
       //  END DATA RETURN
     };
     //------------------------------------------------------------------------
@@ -215,8 +216,22 @@ createApp({
           status: "received",
         };
         sentMessage.push(autoReplayMessage);
-      }, 10000);
+      }, 1000);
     },
+    inputCercaContatto() {
+      let find = this.cerca.trim();
+      console.log(find);
+    },
+    resetCerca() {
+      this.cerca = "";
+    },
+    cercaEfiltra(conattto) {
+      let filtredContacts = this.contacts.filter((contatto) =>
+        contatto.name.includes(this.inputCercaContatto)
+      );
+      console.log(filtredContacts);
+    },
+
     //-----------------------------------------------------------------------
     //   END METHODS
   },
