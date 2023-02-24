@@ -89,12 +89,11 @@
                     </div>
                     <!-- LISTA CONTATTI -->
                     <div class="scb-lista overflow-y-scroll">
-                        <div class="elenco-contatti scb-debug " v-for="(contatto,i) in contacts"
-                            @click="selezionaContattoAttivo(i)" :class="this.currentChat===i? `active` : ``"
-                            v-if="cerca=== `` ? `contatto` : cercaEfiltra(this.contacts)">
+                        <div class="elenco-contatti scb-debug " v-for="(contatto,i) in filtra"
+                            @click="selezionaContattoAttivo(i)" :class="this.currentChat===i? `active` : ``">
 
                             <!-- CONTENITORE CONTATTO  -->
-                            <div class="scb-contatti d-flex scb-debug">
+                            <div class=" scb-contatti d-flex scb-debug">
                                 <!-- NOME E ULTIMO ACCESSO CONTATTO  -->
                                 <div class="d-flex">
                                     <img class="avatar-contatti scb-debug" :src="cerca===`` ? contatto.avatar : ``"

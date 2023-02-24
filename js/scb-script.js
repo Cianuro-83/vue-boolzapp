@@ -1,4 +1,4 @@
-console.log("Ciao Cianuro... Oggi l'esercizio è ");
+console.log("Ciao Cianuro... Oggi l'esercizio è BOOLZAP");
 
 //********************
 //
@@ -225,17 +225,37 @@ createApp({
     resetCerca() {
       this.cerca = "";
     },
-    cercaEfiltra(conattto) {
+    cercaEfiltra() {
       let filtredContacts = this.contacts.filter((contatto) =>
         contatto.name.includes(this.inputCercaContatto)
       );
       console.log(filtredContacts);
+      // return
     },
 
     //-----------------------------------------------------------------------
     //   END METHODS
   },
   //-------------------------------------------------------------------------
+  //  START COMPUTED
+  computed: {
+    filtra() {
+      let filtredContacts = this.contacts.filter((contatto) =>
+        contatto.name.includes(this.inputCercaContatto)
+      );
+      if (this.cerca === "") {
+        this.contacts;
+      } else {
+        filtredContacts;
+      }
+      console.log(this.contacts, filtredContacts);
+      return this.contacts;
+    },
+
+    //---------------------------------------------------------------------------
+    // END COMPUTED
+  },
+  //---------------------------------------------------------------------------
 }).mount("#app");
 //---------------------------------------------------------------------------
 // ||||||||||||||||||||||||||| VUE ||||||||||||||||||||||||||||
