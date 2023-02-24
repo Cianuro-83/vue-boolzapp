@@ -166,6 +166,8 @@ let contacts = [
     ],
   },
 ];
+let nomi = contacts.name;
+console.log(nomi);
 
 //---------------------------------------------------------------------------
 // ||||||||||||||||||||||||||| VUE ||||||||||||||||||||||||||||
@@ -181,7 +183,7 @@ createApp({
       currentChat: 0,
       cerca: "",
       inviaMessaggio: "",
-      nomi: contacts.name,
+
       //  END DATA RETURN
     };
     //------------------------------------------------------------------------
@@ -240,16 +242,17 @@ createApp({
   //  START COMPUTED
   computed: {
     filtra() {
-      let filtredContacts = this.contacts.filter((contatto) =>
-        contatto.name.includes(this.inputCercaContatto)
-      );
+      let contatto = this.contacts;
+      console.log("Eccomi Cianuro", contatto);
+      let filtred = contatto.filter((obj) => {
+        return obj.name.includes(this.cerca);
+      });
+      console.log("Assa fa Dio", filtred);
       if (this.cerca === "") {
-        this.contacts;
+        return this.contacts;
       } else {
-        filtredContacts;
+        return filtred;
       }
-      console.log(this.contacts, filtredContacts);
-      return this.contacts;
     },
 
     //---------------------------------------------------------------------------

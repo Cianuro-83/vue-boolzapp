@@ -43,10 +43,10 @@
                 <div class="col-8 scb-debug scb-top-template d-flex justify-content-between align-items-center">
                     <!-- CHAT SPACE: AVATAR  -->
                     <div class="d-flex justify-content-between align-items-center">
-                        <img class="avatar scb-debug" :src="contacts[currentChat].avatar" alt="">
+                        <img class="avatar scb-debug" :src="filtra[this.currentChat].avatar" alt="">
                         <div class="scb-debug">
                             <span class="ps-2 d-block nome-contatto-ospite"
-                                class="ps-2 fw-medium">{{contacts[currentChat].name}}</span>
+                                class="ps-2 fw-medium">{{filtra[currentChat].name}}</span>
                             <span class="ps-2 ultimo-accesso">Ultimo accesso oggi alle 12</span>
                         </div>
                     </div>
@@ -96,13 +96,10 @@
                             <div class=" scb-contatti d-flex scb-debug">
                                 <!-- NOME E ULTIMO ACCESSO CONTATTO  -->
                                 <div class="d-flex">
-                                    <img class="avatar-contatti scb-debug" :src="cerca===`` ? contatto.avatar : ``"
-                                        alt="">
+                                    <img class="avatar-contatti scb-debug" :src="contatto.avatar" alt="">
                                     <div class="scb-debug scb-scheda-nome-contatto">
                                         <span class="d-block ps-2" class="ps-2 scb-nome-contatto"
-                                            style="font-weight: bold;"> {{cerca==="" ? contatto.name :
-                                            cercaEfiltra(nomi)}}
-                                            <!-- {{contatto.name}} -->
+                                            style="font-weight: bold;">{{contatto.name}}
                                         </span>
                                         <span class="ps-2 ultimo-messagio-inviato">Ultimo messaggio inviato</span>
                                     </div>
@@ -123,7 +120,7 @@
                     <!-- CHAT -->
 
                     <div class="scb-chat scb-debug overflow-y-scroll d-flex flex-column">
-                        <div class=" ms-5 me-5" v-for="messaggi in contacts[currentChat].messages"
+                        <div class=" ms-5 me-5" v-for="messaggi in filtra[currentChat].messages"
                             :class="messaggi.status=== `sent` ? `messaggio-inviato` :`messaggio-ricevuto`">
                             <p>{{messaggi.message}}</p>
                             <p class="orario-messaggio">15.30</p>
