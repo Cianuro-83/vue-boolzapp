@@ -206,7 +206,8 @@ CHAT
   margin-bottom: 10px;
   position: relative;
   align-self: flex-end;
-  text-wrap: break-word;
+  whithe-space: nowrap;
+  word-break: break-all;
 }
 
 .messaggio-ricevuto {
@@ -217,6 +218,8 @@ CHAT
   margin-bottom: 10px;
   position: relative;
   align-self: flex-start;
+  whithe-space: nowrap;
+  word-break: break-all;
 }
 
 .orario-messaggio {
