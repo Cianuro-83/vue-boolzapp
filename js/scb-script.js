@@ -1,7 +1,7 @@
 console.log("Ciao Cianuro... Oggi l'esercizio è BOOLZAP");
 
 //********************
-//
+//VARIABILI GENERALI
 //*********************
 let contacts = [
   {
@@ -166,8 +166,6 @@ let contacts = [
     ],
   },
 ];
-let nomi = contacts.name;
-console.log(nomi);
 
 //---------------------------------------------------------------------------
 // ||||||||||||||||||||||||||| VUE ||||||||||||||||||||||||||||
@@ -183,6 +181,7 @@ createApp({
       currentChat: 0,
       cerca: "",
       inviaMessaggio: "",
+      DateTime: luxon.DateTime,
 
       //  END DATA RETURN
     };
@@ -202,7 +201,7 @@ createApp({
         return;
       }
       const contenutoNuovoMessaggio = {
-        date: "10/01/2020 15:50:00",
+        date: this.dataOdierna,
         message: "",
         status: "sent",
       };
@@ -213,7 +212,7 @@ createApp({
 
       setTimeout(() => {
         const autoReplayMessage = {
-          date: "10/01/2020 15:51:00",
+          date: this.dataOdierna,
           message: "OK!!",
           status: "received",
         };
@@ -226,13 +225,6 @@ createApp({
     },
     resetCerca() {
       this.cerca = "";
-    },
-    cercaEfiltra() {
-      let filtredContacts = this.contacts.filter((contatto) =>
-        contatto.name.includes(this.inputCercaContatto)
-      );
-      console.log(filtredContacts);
-      // return
     },
 
     //-----------------------------------------------------------------------
@@ -257,6 +249,14 @@ createApp({
         return filtred;
       }
     },
+    dataOdierna() {
+      const now = this.DateTime.now();
+      console.log(now);
+
+      const oggi = now.toFormat("HH:mm");
+      // console.log("ciao ", oggi);
+      return oggi;
+    },
 
     //---------------------------------------------------------------------------
     // END COMPUTED
@@ -266,3 +266,15 @@ createApp({
 //---------------------------------------------------------------------------
 // ||||||||||||||||||||||||||| VUE ||||||||||||||||||||||||||||
 //---------------------------------------------------------------------------
+
+// const { DateTime } = luxon
+
+// const now = DateTime.now();
+// console.log(now);
+
+// const oggi = now.toFormat("dd/LL/yyyy HH:mm");
+// console.log(typeof oggi);
+
+// date: "10/01/2020 15:51:00",
+// message: "OK!!",
+// status: "received",

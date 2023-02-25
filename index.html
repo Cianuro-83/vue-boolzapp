@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/luxon.min.js"></script>
     <!-- FONTAWESOME FREE -->
     <script src="https://kit.fontawesome.com/6b35d32b47.js" crossorigin="anonymous"></script>
 </head>
@@ -123,7 +124,7 @@
                         <div class=" ms-5 me-5" v-for="messaggi in filtra[currentChat].messages"
                             :class="messaggi.status=== `sent` ? `messaggio-inviato` :`messaggio-ricevuto`">
                             <p>{{messaggi.message}}</p>
-                            <p class="orario-messaggio">15.30</p>
+                            <p class="orario-messaggio">{{messaggi.date}}</p>
                         </div>
 
                     </div>
