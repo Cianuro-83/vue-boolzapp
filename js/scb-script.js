@@ -243,11 +243,14 @@ createApp({
   computed: {
     filtra() {
       let contatto = this.contacts;
-      console.log("Eccomi Cianuro", contatto);
+      console.log("Contatti totali: ", contatto);
       let filtred = contatto.filter((obj) => {
-        return obj.name.includes(this.cerca);
+        return obj.name
+          .toString()
+          .toLowerCase()
+          .includes(this.cerca.toString().toLowerCase());
       });
-      console.log("Assa fa Dio", filtred);
+      console.log("Contatti filtrati: ", filtred);
       if (this.cerca === "") {
         return this.contacts;
       } else {
