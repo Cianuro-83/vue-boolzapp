@@ -107,7 +107,7 @@
                                 </div>
                                 <!-- ORA RICEZIONE MESSAGGIO -->
                                 <div class="scb-ora-ricezione">
-                                    <span class="scb-debug">12:00</span>
+                                    <span class="scb-debug">{{message}}</span>
                                 </div>
                             </div>
                         </div>
@@ -121,10 +121,10 @@
                     <!-- CHAT -->
 
                     <div class="scb-chat scb-debug overflow-y-scroll d-flex flex-column">
-                        <div class=" ms-5 me-5" v-for="messaggi in filtra[currentChat].messages"
+                        <div class=" ms-5 me-5" v-for="(messaggi,index) in filtra[currentChat].messages"
                             :class="messaggi.status=== `sent` ? `messaggio-inviato` :`messaggio-ricevuto`">
                             <p>{{messaggi.message}}</p>
-                            <p class="orario-messaggio">{{messaggi.date}}</p>
+                            <p class="orario-messaggio"> {{this.oraInvioMessaggio}}</p>
                         </div>
 
                     </div>

@@ -3,6 +3,7 @@ console.log("Ciao Cianuro... Oggi l'esercizio è BOOLZAP");
 //********************
 //VARIABILI GENERALI
 //*********************
+
 let contacts = [
   {
     name: "Michele",
@@ -179,6 +180,7 @@ createApp({
       message: "CIAO CIANURO!",
       contacts: contacts,
       currentChat: 0,
+      currentMessage: 0,
       cerca: "",
       inviaMessaggio: "",
       DateTime: luxon.DateTime,
@@ -253,11 +255,26 @@ createApp({
       const now = this.DateTime.now();
       console.log(now);
 
-      const oggi = now.toFormat("HH:mm");
+      const oggi = now.toFormat("dd/LL/yyyy HH:mm");
       // console.log("ciao ", oggi);
       return oggi;
     },
+    oraInvioMessaggio() {
+      let orario =
+        this.filtra[this.currentChat].messages[this.currentMessage].date;
+      console.log("cianuro strunz ", orario);
+      let onlyTime = this.DateTime.fromFormat(orario, "dd/LL/yyyy HH:mm:ss");
+      console.log(onlyTime);
+      return onlyTime.toFormat("HH:mm");
 
+      // for (let i = 0; i < this.filtra[this.currentChat].messages.lenght; i++) {
+      //   let orario = this.filtra[this.currentChat].messages[i].date;
+      //   console.log("cianuro strunz ", orario);
+      //   let onlyTime = this.DateTime.fromFormat(orario, "dd/LL/yyyy HH:mm:ss");
+      //   console.log(onlyTime);
+      //   return onlyTime.toFormat("HH:mm");
+      // }
+    },
     //---------------------------------------------------------------------------
     // END COMPUTED
   },
@@ -267,14 +284,4 @@ createApp({
 // ||||||||||||||||||||||||||| VUE ||||||||||||||||||||||||||||
 //---------------------------------------------------------------------------
 
-// const { DateTime } = luxon
-
-// const now = DateTime.now();
-// console.log(now);
-
-// const oggi = now.toFormat("dd/LL/yyyy HH:mm");
-// console.log(typeof oggi);
-
-// date: "10/01/2020 15:51:00",
-// message: "OK!!",
-// status: "received",
+// const { DateTime } = luxon;
